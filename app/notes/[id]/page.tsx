@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = note ? `${note.title} | NoteHub` : "Note not found";
   const description = note ? note.content.substring(0, 160) : "Notes Details";
-  const url = `https://08-zustand-psi-sable.vercel.app/${id}`;
+  const url = `https://08-zustand-weld-delta.vercel.app//${id}`;
 
   return {
     title,

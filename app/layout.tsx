@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NoteHub - Your clever Assistant",
     description: "Save your ideas from any device",
-    // url: "https://your-app-url.vercel.app{slug.join(" / ")}",
+    url: "https://08-zustand-weld-delta.vercel.app/",
     siteName: "NoteHub",
     images: [
       {

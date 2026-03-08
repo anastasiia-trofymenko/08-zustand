@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `Filter: ${filterValue} | NoteHub`;
   const description = `Look up notes with filter: ${filterValue}. Find your notes quick and easy`;
-  const url = `https://your-app-url.vercel.app{slug.join("/")}`;
+  const url = `https://08-zustand-weld-delta.vercel.app/notes/filter/${slug.join("/")}`;
 
   return {
     title,
