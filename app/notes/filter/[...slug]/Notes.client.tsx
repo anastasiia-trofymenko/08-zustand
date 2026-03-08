@@ -19,8 +19,6 @@ interface NotesClientProps {
 export default function NotesClient({ tag }: NotesClientProps) {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [debouncedSearch] = useDebounce(search, 300);
 
   const debouncedSetSearchQuery = useDebouncedCallback((value: string) => {
     setSearch(value);
@@ -30,8 +28,6 @@ export default function NotesClient({ tag }: NotesClientProps) {
     setPage(1);
     debouncedSetSearchQuery(value);
   };
-
-  // const toggleModal = () => setIsModalOpen((prev) => !prev);
 
   const { data, isLoading, isError, isPlaceholderData } = useQuery({
     queryKey: ["notes", search, page, tag],

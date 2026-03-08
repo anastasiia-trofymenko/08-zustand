@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Створити нотатку | NoteHub",
     description: "Створіть нову нотатку та збережіть її у хмарі.",
-    url: "https://08-zustand-git-main-bogdan-osts-projects.vercel.app/notes/action/create",
+    url: "https://your-app-url.vercel.app",
     siteName: "NoteHub",
     images: [
       {
