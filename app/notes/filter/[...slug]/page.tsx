@@ -4,9 +4,44 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import { fetchNotes } from "@/lib/api";
+import { Metadata } from "next";
 
 import NotesClient from "./Notes.client";
 export const dynamic = "force-dynamic";
+
+type Props = {
+  params: Promise<{ slug: string[] }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const slug = (await params).slug;
+  const filterValue = slug.join(" / ");
+
+  const title = `Фільтр: ${filterValue} | NoteHub`;
+  const description = `Перегляд нотаток за фільтром: ${filterValue}. Знаходьте ваші записи швидко та зручно.`;
+  const url = `https://your-app-url.vercel.app{slug.join("/")}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "NoteHub",
+      images: [
+        {
+          url: "https://08-zustand-psi-sable.vercel.app/",
+          width: 1200,
+          height: 630,
+          alt: `NoteHub Filter: ${filterValue}`,
+        },
+      ],
+      locale: "uk_UA",
+      type: "website",
+    },
+  };
+}
 
 export default async function NotesPage({
   params,
