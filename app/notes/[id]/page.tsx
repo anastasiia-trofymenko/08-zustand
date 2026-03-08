@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = note ? `${note.title} | NoteHub` : "Note not found";
   const description = note ? note.content.substring(0, 160) : "Notes Details";
-  const url = `https://08-zustand-weld-delta.vercel.app//${id}`;
+  const url = `https://08-zustand-weld-delta.vercel.app/${id}`;
 
   return {
     title,
@@ -53,12 +53,12 @@ interface NoteDetailsPageProps {
 }
 
 const NoteDetails = async ({ params }: NoteDetailsPageProps) => {
-  const { id } = await params;
+  // const { id } = await params;
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["note", id],
-    queryFn: () => fetchNoteById(id),
+    queryKey: ["note", params.id],
+    queryFn: () => fetchNoteById(params.id),
   });
 
   return (
