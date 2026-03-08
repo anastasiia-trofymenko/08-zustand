@@ -11,6 +11,7 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { fetchNotes } from "@/lib/api";
 import { useDebouncedCallback } from "use-debounce";
+import Link from "next/link";
 
 interface NotesClientProps {
   tag: string;
@@ -51,9 +52,9 @@ export default function NotesClient({ tag }: NotesClientProps) {
             }}
           />
         )}
-        <button className={css.button} onClick={() => setIsModalOpen(true)}>
+        <Link href="/notes/action/create" className={css.createButton}>
           Create note +
-        </button>
+        </Link>
       </header>
 
       {isLoading && <Loader />}
@@ -61,11 +62,11 @@ export default function NotesClient({ tag }: NotesClientProps) {
 
       {data?.notes && data.notes.length > 0 && <NoteList notes={data.notes} />}
 
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <Modal onClose={() => setIsModalOpen(false)}>
           <NoteForm onClose={() => setIsModalOpen(false)} />
         </Modal>
-      )}
+      )} */}
     </div>
   );
 }

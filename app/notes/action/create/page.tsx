@@ -3,12 +3,12 @@ import css from "./CreateNote.module.css";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Створити нотатку | NoteHub",
+  title: "Create new note | NoteHub",
   description:
-    "Сторінка створення нової нотатки. Записуйте свої ідеї та думки швидко.",
+    "Create a new note page. Quickly jot down your ideas and thoughts.",
   openGraph: {
-    title: "Створити нотатку | NoteHub",
-    description: "Створіть нову нотатку та збережіть її у хмарі.",
+    title: "Create new note | NoteHub",
+    description: "Create a new note and save it to the cloud.",
     url: "https://your-app-url.vercel.app",
     siteName: "NoteHub",
     images: [
